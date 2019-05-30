@@ -2,9 +2,11 @@
 
 import sys
 
+# can kind of follow same set up as eating cookies
+# getting from an initial value to zero!
+
 def making_change(amount, denominations):
   pass 
-
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
