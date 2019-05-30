@@ -3,8 +3,13 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  min_batch_values = []
+  if set(recipe.keys()).issubset(set(ingredients.keys())):
+    for ingredient in ingredients:
+      min_batch_values.append(ingredients[ingredient]//recipe[ingredient])
+  else:
+    return 0
+  return min(min_batch_values)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
