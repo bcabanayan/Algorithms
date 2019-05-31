@@ -3,8 +3,12 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  plays = [['rock'],['paper'],['scissors']]
+  final_list = [[]]
+  if n == 0:
+    return final_list
 
+print(rock_paper_scissors(1))
 
 if __name__ == "__main__":
   if len(sys.argv) > 1:
