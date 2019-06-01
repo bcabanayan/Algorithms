@@ -5,11 +5,6 @@ import sys
 def rock_paper_scissors(n):
   final_list = []
   options = [['rock'],['paper'],['scissors']]
-  # def add_plays(plays_so_far):
-  #   for i in plays_so_far:
-  #     for j in plays:
-  #       i = i + j
-  #     return plays_so_far
   if n == 0:
     return [[]]
   else:
