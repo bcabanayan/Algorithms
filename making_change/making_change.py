@@ -7,22 +7,17 @@ import sys
 
 # denominations = [1, 5, 10, 25, 50]
 
-def making_change(amount, denominations, ways):
-  if amount == 0:
-    return 1
-  elif amount < 0:
+def making_change(amount, denominations):
+  if amount < 0 or amount % 1 != 0:
     return 0
-  elif amount in ways:
-    return ways[amount]
-  else:
-    result = 0
-    for i in range(len(denominations) - 1, -1, -1):
-      result = result + making_change(amount - denominations[i], denominations, ways)
-    ways[amount] = result
-    if result.sort() not in ways:
-      return result
-
-print(making_change(10, [1, 5, 10, 25, 50], {}))
+  table = [0 for x in range(amount + 1)]  
+  table[0] = 1
+  for i in range(0,len(denominations)):
+      for j in range(denominations[i], amount + 1):
+          table[j] += table[j - denominations[i]]
+  return table[amount]
+ 
+print(making_change(10, [1, 5, 10, 25, 50]))
 
 if __name__ == "__main__":
   # Test our your implementation from the command line
